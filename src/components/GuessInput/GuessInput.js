@@ -21,6 +21,9 @@ function GuessInput({ addGuess, gameOver }) {
     >
       <label htmlFor="guess-input">Enter guess:</label>
       <input
+        required
+        minLength={5}
+        maxLength={5}
         id="guess-input"
         type="text"
         pattern="[a-zA-Z]{5}"
