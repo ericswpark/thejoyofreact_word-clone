@@ -11,7 +11,10 @@ function Keyboard({ guesses, answer }) {
         if (guessLetter.letter === letter) {
           // Only upgrade the status of the key:
           // undefined -> incorrect -> misplaced -> correct
-          if (keyStatus === undefined && guessLetter.status !== undefined) {
+          if (
+            typeof keyStatus === "undefined" &&
+            typeof guessLetter.status !== "undefined"
+          ) {
             keyStatus = guessLetter.status;
           } else if (keyStatus === "incorrect") {
             if (
