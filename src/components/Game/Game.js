@@ -7,6 +7,7 @@ import GuessResults from "../GuessResults/GuessResults";
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import Banner from "../Banner/Banner";
 import { checkGuess } from "../../game-helpers";
+import Keyboard from "../Keyboard/Keyboard";
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -44,22 +45,16 @@ function Game() {
     return allCorrect;
   }
 
-  if (!isGameOver()) {
-    return (
-      <>
-        <GuessResults guesses={guesses} answer={answer} />
-        <GuessInput addGuess={addGuess} />
-      </>
-    );
-  } else {
-    return (
-      <>
-        <GuessResults guesses={guesses} answer={answer} />
-        <GuessInput addGuess={addGuess} gameOver={isGameOver()} />
+  return (
+    <>
+      <GuessResults guesses={guesses} answer={answer} />
+      <GuessInput addGuess={addGuess} gameOver={isGameOver()} />
+      <Keyboard guesses={guesses} answer={answer} />
+      {isGameOver() && (
         <Banner won={isGameWon()} guessCount={guesses.length} answer={answer} />
-      </>
-    );
-  }
+      )}
+    </>
+  );
 }
 
 export default Game;
