@@ -27,6 +27,7 @@ function GuessInput({ addGuess, gameOver }) {
         id="guess-input"
         type="text"
         pattern="[a-zA-Z]{5}"
+        title="5 letter word"
         disabled={gameOver}
         value={guess}
         onChange={(event) => {
