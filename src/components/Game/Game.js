@@ -58,7 +58,7 @@ function Game() {
             newGame();
           }}
         >
-          Play again
+          Restart Game
         </button>
       )}
       <GuessInput addGuess={addGuess} gameOver={isGameOver()} />
