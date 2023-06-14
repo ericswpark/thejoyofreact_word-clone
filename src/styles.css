@@ -59,6 +59,15 @@ header .side {
   place-content: center;
 }
 
+button {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  aspect-ratio: 7 / 1;
+  background-color: var(--color-gray-900);
+  --radius: 4px;
+}
+
 h1 {
   flex: 1;
   font-size: 2rem;
